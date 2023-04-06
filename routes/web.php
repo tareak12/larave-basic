@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\MamberController;
@@ -16,6 +17,14 @@ use App\Http\Controllers\MamberController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/**
+ * Student Controller Route List
+ */
+Route::get('students',[StudentController::class, 'index']);
+Route::get('students/{student}',[StudentController::class, 'show']);
+
+
+
 
 Route::redirect('/','about');
 
@@ -44,9 +53,6 @@ Route::resource('users',UserController::class);
 Route::resource('members',MemberController::class);
 
 
-
-
-#Student Resource Routes
 
 
 

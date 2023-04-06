@@ -15,7 +15,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $studentList = Student::limit(10)->get();
+        return view('student.index',compact('studentList'));
     }
 
     /**
@@ -47,7 +48,8 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        dd($student->toArray());
+        echo 'I am in Show';
     }
 
     /**
